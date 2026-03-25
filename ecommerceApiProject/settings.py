@@ -99,16 +99,26 @@ if not DB:
 
 else:
 
-    DATABASES = { 
-        'default': {
-           'ENGINE': 'django.db.backends.postgresql',
-           'NAME': 'railway',
-           'USER': 'postgres',
-           'PASSWORD': os.getenv('PG_PASSWORD'),
-           'HOST': os.getenv('PG_HOST'),
-           'PORT': os.getenv('PG_PORT'),
-       }
+    # DATABASES = { 
+    #     'default': {
+    #        'ENGINE': 'django.db.backends.postgresql',
+    #        'NAME': 'railway',
+    #        'USER': 'postgres',
+    #        'PASSWORD': os.getenv('PG_PASSWORD'),
+    #        'HOST': os.getenv('PG_HOST'),
+    #        'PORT': os.getenv('PG_PORT'),
+    #    }
+    # }
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('PG_NAME'),
+        'USER': os.getenv('PG_USER'),
+        'PASSWORD': os.getenv('PG_PASSWORD'),
+        'HOST': os.getenv('PG_HOST'),
+        'PORT': int(os.getenv('PG_PORT', 5432)),
     }
+}
 
 
 
