@@ -12,6 +12,10 @@ urlpatterns = [
     path('add-review/', views.add_review, name='add-review'),
     path('update-review/<int:pk>/', views.update_review, name='update-review'),
     path('delete-review/<int:pk>/', views.delete_review, name='delete-review'),
+    path('delete-cartitem/<int:pk>/', views.delete_cartItem, name='delete-cartitem'),
     path('add-to-wishlist/', views.add_to_wishlist, name='add-to-wishlist'),
+    path('search/', views.search_products, name='search-products'),
+    path('create_checkout_session/', views.create_checkout_session, name='create_checkout_session'),
+    path('webhook/', views.my_webhook_view, name='webhook'),
 
 ]

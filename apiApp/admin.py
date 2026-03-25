@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser, Category, Product, Cart, CartItem, Review, ProductRating, Wishlist
+from .models import CustomUser, Category, OrderItem, Orders, Product, Cart, CartItem, Review, ProductRating, Wishlist
 
 
 class CustomUserAdmin(UserAdmin):
@@ -47,3 +47,11 @@ admin.site.register(ProductRating, ProductRatingAdmin)
 class WishlistAdmin(admin.ModelAdmin):
     list_display = ('user', 'product', 'created')
 admin.site.register(Wishlist, WishlistAdmin)
+
+class OrdersAdmin(admin.ModelAdmin):
+    list_display = ('stripe_checkout_id', 'customer_email', 'amount', 'currency', 'status', 'created_at')
+admin.site.register(Orders, OrdersAdmin)
+
+class OrderItemAdmin(admin.ModelAdmin):
+    list_display = ('order', 'product', 'quantity')
+admin.site.register(OrderItem, OrderItemAdmin)
