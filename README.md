@@ -3,6 +3,13 @@
 ## Introduction
 This is the backend of an e-commerce API built using Django. It provides various endpoints that allow the management of products, orders, users, and other related entities in an e-commerce platform.
 
+pip install django
+django-admin startproject project_name
+cd project_name
+python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+
 ## Dependencies
 - Django >= 3.2
 - Django REST Framework >= 3.12
